@@ -21,6 +21,7 @@ y = student['G3']>=mean(student['G3'])
 good_outcome=True
 bad_outcome=False
 sensitive_attribute='sex'
+sensitive_attributes=['sex','guardian']
 sensitive_value='F'
 cat=['school', 'address', 'famsize','Pstatus','Mjob','Fjob','reason','guardian','schoolsup','famsup','paid', 'activities','nursery','higher','internet', 'romantic']
 filename='results/student_images.pdf'  
