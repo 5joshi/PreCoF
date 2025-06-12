@@ -1,0 +1,7 @@
+results/
+*.png
+
+
+__pycache__/
+*.code-workspace
+test*.ipynb

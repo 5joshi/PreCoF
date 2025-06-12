@@ -360,8 +360,11 @@ def visualize_fairness_metrics(accuracyglobal1,accuracyglobal2,accuracyglobal3, 
 def precof(X,y,sensitive_attributes,catws,good_outcome,bad_outcome,sensitive_value, file):
     print('Modelling with sensitive attribute')
     sensitive_attributes_values=[]
-    for sensitive_attribute in sensitive_attributes:
-        sensitive_attributes_values.append(X[sensitive_attribute].unique())
+    if isinstance(sensitive_attributes, str):
+        sensitive_attributes_values.append(X[sensitive_attributes].unique())
+    else:
+        for sensitive_attribute in sensitive_attributes:
+            sensitive_attributes_values.append(X[sensitive_attribute].unique())
     value_combinations=list(itertools.product(*sensitive_attributes_values))
     print('Modelling with sensitive attribute')
     cat=catws.copy()
